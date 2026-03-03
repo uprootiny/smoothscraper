@@ -1,0 +1,15 @@
+[Unit]
+Description=SmoothScraper daemon
+After=network.target
+
+[Service]
+Type=simple
+User=uprootiny
+WorkingDirectory=/home/uprootiny/Shevat/smoothscraper
+ExecStart=/home/uprootiny/Shevat/smoothscraper/target/release/smoothscraper --daemon config.toml
+Restart=on-failure
+RestartSec=10
+Environment=RUST_LOG=info
+
+[Install]
+WantedBy=multi-user.target

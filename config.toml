@@ -1,0 +1,37 @@
+# smoothscraper configuration
+# Output compatible with arbitragefx CSV format
+
+data_dir = "../arbitragefx/data"
+max_candles = 5000
+loop_interval_secs = 3600  # hourly in daemon mode
+health_port = 0
+
+[[pairs]]
+target = "binance"
+symbol = "BTCUSDT"
+intervals = ["1h", "4h", "15m"]
+funding = true
+oi = true
+premium = true
+long_short = true
+taker = true
+
+[[pairs]]
+target = "binance"
+symbol = "ETHUSDT"
+intervals = ["1h", "4h"]
+funding = true
+oi = true
+premium = true
+long_short = true
+taker = true
+
+[[pairs]]
+target = "binance"
+symbol = "SOLUSDT"
+intervals = ["1h", "4h"]
+funding = true
+oi = true
+premium = true
+long_short = true
+taker = true
